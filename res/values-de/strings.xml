@@ -190,6 +190,9 @@
     <string name="input_settings_summary">Verhalten der Tasten kontrollieren</string>
     <string name="button_settings_title">Tasten-Einstellungen</string>
     <string name="lockscreen_settings_title">Bildschirmsperre-Einstellungen</string>
+    <string name="pref_lockscreen_custom_app_toggle_title">Eigener Starter</string>
+    <string name="pref_lockscreen_custom_app_toggle_summary">Zeigt einen weiteren Schieber, Mulde oder Blase (je nach Stil) zum Starten einer Anwendung an</string>
+    <string name="pref_lockscreen_custom_app_activity_title">Verknüpfte Anwendung</string>
     <string name="pref_lockscreen_music_controls_title">Musiksteuerung bei Bildschirmsperre</string>
     <string name="pref_lockscreen_music_controls_summary">Steuerelemente für Musik auf gesperrtem Bildschirm anzeigen</string>
     <string name="pref_lockscreen_always_music_controls_title">Immer anzeigen</string>
@@ -202,9 +205,6 @@
     <string name="pref_menu_unlock_summary">Menütaste entsperrt das Gerät.</string>
     <string name="pref_lockscreen_quick_unlock_control_title">Schnelles Entsperren</string>
     <string name="pref_lockscreen_quick_unlock_control_summary">PIN und Passwort ohne Bestätigung eingeben. Löschen gilt als Fehlversuch.</string>
-    <string name="pref_lockscreen_phone_messaging_control_title">Telefon und SMS/MMS</string>
-    <string name="pref_lockscreen_phone_messaging_control_summary">Telefon und SMS/MMS Slider auf gesperrtem Bildschirm anzeigen.</string>
-    <string name="pref_messaging_tab_app_title">SMS/MMS Slider Anwendung</string>
     <string name="pref_lockscreen_style_title">Lockscreen-Aussehen</string>
 	  <string name="pref_lockscreen_style_summary">Einen Stil für den Lockscreen auswählen</string>
 

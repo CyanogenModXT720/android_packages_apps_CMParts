@@ -188,6 +188,9 @@
     <string name="input_settings_summary">设备按键行为选项</string>
     <string name="button_settings_title">按键设置</string>
     <string name="lockscreen_settings_title">锁屏设置</string>
+    <string name="pref_lockscreen_custom_app_toggle_title">自定义程序启动</string>
+    <string name="pref_lockscreen_custom_app_toggle_summary">在滑动风格时显示第二个滑动条，在旋转风格时显示自定义程序按键</string>
+    <string name="pref_lockscreen_custom_app_activity_title">自定义程序</string>
     <string name="pref_lockscreen_music_controls_title">锁屏音乐播放控制按钮</string>
     <string name="pref_lockscreen_music_controls_summary">在锁屏画面上显示音乐播放控制按钮</string>
     <string name="pref_lockscreen_always_music_controls_title">总是显示音乐播放控制按钮</string>

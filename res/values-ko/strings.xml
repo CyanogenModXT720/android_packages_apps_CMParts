@@ -181,6 +181,9 @@
     <string name="input_settings_summary">버튼 작동방식 조정</string>
     <string name="button_settings_title">버튼 설정</string>
     <string name="lockscreen_settings_title">잠금 화면 설정</string>
+    <string name="pref_lockscreen_custom_app_toggle_title">사용자 지정 앱</string>
+    <string name="pref_lockscreen_custom_app_toggle_summary">두번째 슬라이더나 추가 구멍을 이용하여 사용자 지정 앱을 실행합니다.</string>
+    <string name="pref_lockscreen_custom_app_activity_title">사용자 지정 앱</string>
     <string name="pref_lockscreen_music_controls_title">잠금 화면에서 음악 조정</string>
     <string name="pref_lockscreen_music_controls_summary">음악 조정 화면을 잠금 화면에 표시합니다.</string>
     <string name="pref_lockscreen_always_music_controls_title">항상 음악 조정 표시</string>

@@ -33,11 +33,12 @@
             android:dialogTitle="@string/pref_lockscreen_style_title"
             android:title="@string/pref_lockscreen_style_title" android:summary="@string/pref_lockscreen_style_summary"
             android:entries="@array/pref_lockscreen_style_entries" android:entryValues="@array/pref_lockscreen_style_values" />
-        <CheckBoxPreference android:key="lockscreen_phone_messaging_tab"
-            android:title="@string/pref_lockscreen_phone_messaging_control_title"
-            android:summary="@string/pref_lockscreen_phone_messaging_control_summary" />
-        <Preference android:key="pref_messaging_tab_app"
-            android:dependency="lockscreen_phone_messaging_tab" android:title="@string/pref_messaging_tab_app_title" />
+        <CheckBoxPreference android:key="pref_lockscreen_custom_app_toggle"
+            android:title="@string/pref_lockscreen_custom_app_toggle_title"
+            android:summary="@string/pref_lockscreen_custom_app_toggle_summary" />
+        <Preference android:key="pref_lockscreen_custom_app_activity"
+            android:dependency="pref_lockscreen_custom_app_toggle"
+            android:title="@string/pref_lockscreen_custom_app_activity_title" />
         <PreferenceScreen android:key="lockscreen_gestures"
             android:title="@string/pref_lockscreen_title">
                 <intent android:action="android.intent.action.MAIN"
