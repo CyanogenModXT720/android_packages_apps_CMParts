@@ -2,7 +2,6 @@ package com.cyanogenmod.cmparts.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -20,11 +19,6 @@ public class StatusBarActivity extends PreferenceActivity {
     /* Battery Percentage Font Color */
     private static final String UI_BATTERY_PERCENT_COLOR = "battery_status_color_title";
     private Preference mBatteryPercentColorPreference;
-    /* Display Battery in 1% Steps */
-    private static final String PREF_STATUS_BAR_ONEPERC_BATTERY = "pref_status_bar_oneperc_battery";
-    private static final String ONEPERC_BATT_PERSIST_PROP = "persist.sys.one_percent_batt";
-    private static final String ONEPERC_BATT_DEFAULT = "0";
-    private CheckBoxPreference mStatusBarOnepercBattery;
     /* Display Clock */
     private static final String UI_SHOW_STATUS_CLOCK = "show_status_clock";
     private CheckBoxPreference mShowClockPref;
@@ -58,11 +52,6 @@ public class StatusBarActivity extends PreferenceActivity {
                 Settings.System.BATTERY_PERCENTAGE_STATUS_ICON, 0) == 1);
         /* Battery Percentage Color */
         mBatteryPercentColorPreference = prefSet.findPreference(UI_BATTERY_PERCENT_COLOR);
-        /* Display Battery in 1% Steps */
-        mStatusBarOnepercBattery = (CheckBoxPreference) prefSet
-                .findPreference(PREF_STATUS_BAR_ONEPERC_BATTERY);
-        String onepercBattery = SystemProperties.get(ONEPERC_BATT_PERSIST_PROP, ONEPERC_BATT_DEFAULT);
-        mStatusBarOnepercBattery.setChecked("1".equals(onepercBattery));
         /* Show Clock */
         mShowClockPref = (CheckBoxPreference) prefSet.findPreference(UI_SHOW_STATUS_CLOCK);
         mShowClockPref.setChecked(Settings.System.getInt(getContentResolver(),
@@ -96,12 +85,6 @@ public class StatusBarActivity extends PreferenceActivity {
         /* Battery Font Color */
         else if (preference == mBatteryPercentColorPreference) {
             showColorPicker(mBatteryColorHandler);
-        }
-        /* Display Battery in 1% Steps */
-	else if (preference == mStatusBarOnepercBattery) {
-            SystemProperties.set(ONEPERC_BATT_PERSIST_PROP,
-                    mStatusBarOnepercBattery.isChecked() ? "1" : "0");	
-            return true;
         }
         /* Display Clock */
         else if (preference == mShowClockPref) {

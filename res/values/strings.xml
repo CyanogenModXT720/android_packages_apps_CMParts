@@ -69,8 +69,6 @@
     <string name="pref_battery_percentage_title">Battery percentage</string>
     <string name="pref_battery_percentage_summary">Battery percentage displayed in the status bar</string>
     <string name="battery_status_color_title">Battery percentage color</string>
-    <string name="ui_status_bar_oneperc_battery_title">1% battery steps</string>
-    <string name="ui_status_bar_oneperc_battery_summary">Show battery percentage in 1% steps. May cause issues with third party batteries and AC adapters. (Requires reboot)</string>
 
     <!-- Status Bar, Clock -->
     <string name="clock_title">Clock</string>
