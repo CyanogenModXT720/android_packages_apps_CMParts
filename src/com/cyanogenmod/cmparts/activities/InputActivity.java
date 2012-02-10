@@ -44,6 +44,8 @@ public class InputActivity extends PreferenceActivity implements
     private static final String VOLBTN_MUSIC_CTRL_PREF = "pref_volbtn_music_controls";
 
     private static final String CAMBTN_MUSIC_CTRL_PREF = "pref_cambtn_music_controls";
+    
+    private static final String MEDBTN_MUSIC_CTRL_PREF = "pref_medbtn_music_controls";
 
     private static final String VOLBTN_ORIENT_PREF = "pref_volbtn_orientation";
 
@@ -74,6 +76,8 @@ public class InputActivity extends PreferenceActivity implements
     private CheckBoxPreference mVolBtnMusicCtrlPref;
 
     private CheckBoxPreference mCamBtnMusicCtrlPref;
+    
+    private CheckBoxPreference mMedBtnMusicCtrlPref;
 
     private CheckBoxPreference mVolBtnOrientationPref;
 
@@ -120,6 +124,10 @@ public class InputActivity extends PreferenceActivity implements
         mCamBtnMusicCtrlPref.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.CAMBTN_MUSIC_CONTROLS, 0) == 1);
 
+        mMedBtnMusicCtrlPref = (CheckBoxPreference) prefSet.findPreference(MEDBTN_MUSIC_CTRL_PREF);
+        mMedBtnMusicCtrlPref.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.MEDBTN_MUSIC_CONTROLS, 0) == 1);
+
         mVolBtnOrientationPref = (CheckBoxPreference) prefSet.findPreference(VOLBTN_ORIENT_PREF);
         String volBtnOrientation = SystemProperties.get(VOLBTN_ORIENT_PERSIST_PROP, VOLBTN_ORIENT_DEFAULT);
         mVolBtnOrientationPref.setChecked("1".equals(volBtnOrientation));
@@ -144,7 +152,12 @@ public class InputActivity extends PreferenceActivity implements
         if (!getResources().getBoolean(R.bool.has_camera_button)) {
             buttonCategory.removePreference(mCamBtnMusicCtrlPref);
         }
-        if (!"vision".equals(Build.DEVICE)) {
+        
+        if (!getResources().getBoolean(R.bool.has_media_button)) {
+            buttonCategory.removePreference(mMedBtnMusicCtrlPref);
+        }
+
+	if (!"vision".equals(Build.DEVICE)) {
             buttonCategory.removePreference(mUserDefinedKey1Pref);
             buttonCategory.removePreference(mUserDefinedKey2Pref);
             buttonCategory.removePreference(mUserDefinedKey3Pref);
@@ -213,6 +226,13 @@ public class InputActivity extends PreferenceActivity implements
             Settings.System.putInt(getContentResolver(), Settings.System.CAMBTN_MUSIC_CONTROLS,
                     value ? 1 : 0);
             return true;
+
+	} else if (preference == mMedBtnMusicCtrlPref) {
+            value = mMedBtnMusicCtrlPref.isChecked();
+            Settings.System.putInt(getContentResolver(), Settings.System.MEDBTN_MUSIC_CONTROLS,
+                    value ? 1 : 0);
+            return true;
+
         } else if (preference == mVolBtnOrientationPref) {
             SystemProperties.set(VOLBTN_ORIENT_PERSIST_PROP,
                     mVolBtnOrientationPref.isChecked() ? "1" : "0");

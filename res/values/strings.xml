@@ -355,6 +355,10 @@
     <string name="pref_volbtn_music_controls_summary">Seek music tracks when long-pressing the volume buttons while screen off</string>
     <string name="pref_cambtn_music_controls_title">Camera button music control</string>
     <string name="pref_cambtn_music_controls_summary">Toggle play/pause when long-pressing the camera button while screen off</string>
+
+    <string name="pref_medbtn_music_controls_title">Media button start music</string>
+    <string name="pref_medbtn_music_controls_summary">Duplicate headset button function to start music</string>
+
     <string name="pref_volbtn_orientation_title">Swap volume buttons in landscape</string>
     <string name="pref_volbtn_orientation_summary">Enable swapping of volume button function according to phone orientation (requires reboot)</string>
     <string name="lockscreen_widgets_note_title">Note</string>

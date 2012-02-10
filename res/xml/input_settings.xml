@@ -62,6 +62,11 @@
 			android:title="@string/pref_cambtn_music_controls_title"
 			android:summary="@string/pref_cambtn_music_controls_summary" />
 
+                <CheckBoxPreference android:key="pref_medbtn_music_controls"
+                        android:title="@string/pref_medbtn_music_controls_title"
+                        android:summary="@string/pref_medbtn_music_controls_summary" />
+
+
 		<CheckBoxPreference android:key="pref_volbtn_orientation"
 			android:title="@string/pref_volbtn_orientation_title"
 			android:summary="@string/pref_volbtn_orientation_summary" />

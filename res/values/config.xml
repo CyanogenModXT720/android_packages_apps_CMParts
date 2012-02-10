@@ -8,6 +8,7 @@
 
     <!-- Whether or not to display the camera button settings -->
     <bool name="has_camera_button">false</bool>
+    <bool name="has_media_button">false</bool>
 
     <!-- Notification LED can show any color -->
     <bool name="has_rgb_notification_led">false</bool>
