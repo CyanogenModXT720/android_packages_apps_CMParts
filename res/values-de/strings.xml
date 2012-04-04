@@ -37,6 +37,8 @@
 
     <string name="pref_electron_beam_animation_on">Einschalten animieren</string>
     <string name="pref_electron_beam_animation_off">Ausschalten animieren</string>
+    <string name="pref_rotation_animation_title">Drehungs-Animation</string>
+    <string name="pref_rotation_animation_summary">Drehung des Bildschirminhaltes bei Drehung des Gerätes animieren (benötigt Neustart)</string>
 
     <!-- User interface: Tablet tweaks -->
     <string name="tablet_tweaks_title_head">Tablet-Einstellungen</string>
@@ -499,7 +501,7 @@
 
     <!-- Performance : GMAPS hack -->
     <string name="pref_gmaps_hack_title">GMAPS hack</string>
-    <string name="pref_gmaps_hack_summary">Mehr freier RAM durch beenden des NetworkLocationService. Latitude kann die Position nicht mehr zuverlässig melden. (Neustart erforderlich)</string>
+    <string name="pref_gmaps_hack_summary">Mehr freier RAM durch beenden des NetworkLocationService. Latitude kann die Position nicht mehr zuverlässig melden. (GMaps Neustart erforderlich)</string>
 
     <!-- Performance Settings : Warning dialog -->
     <string name="performance_settings_warning_title">VORSICHT!</string>

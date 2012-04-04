@@ -24,6 +24,11 @@
             android:title="@string/pref_na_on_plug_title"
             android:summary="@string/pref_na_on_plug_summary" />
 
+        <!-- Rotation animation -->
+        <CheckBoxPreference android:key="pref_rotation_animation"
+            android:title="@string/pref_rotation_animation_title"
+            android:summary="@string/pref_rotation_animation_summary"/>
+
     </PreferenceCategory>
 
     <!-- Rotation -->
