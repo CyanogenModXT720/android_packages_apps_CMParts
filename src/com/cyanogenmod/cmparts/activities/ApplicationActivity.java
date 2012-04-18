@@ -52,6 +52,8 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
     private static final String ENABLE_CROND_PREF = "enable_crond";
     
     private static final String ENABLE_CROND_PROP = "persist.service.crond.enable";
+    
+    private static final String ENABLE_CROND_DEFAULT = "1";
 
     private static final String LOG_TAG = "CMParts";
 
@@ -118,7 +120,8 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
         mEnableManagement.setOnPreferenceChangeListener(this);
 
         mEnableCrond = (CheckBoxPreference) prefSet.findPreference(ENABLE_CROND_PREF);
-        mEnableCrond.setChecked(SystemProperties.getBoolean(ENABLE_CROND_PROP, true));
+        String enablecron = SystemProperties.get(ENABLE_CROND_PROP, ENABLE_CROND_DEFAULT);
+        mEnableCrond.setChecked("1".equals(enablecron));
     }
 
     @Override
@@ -130,6 +133,10 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
         } else if (preference == mSwitchStoragePref) {
             SystemProperties.set("persist.sys.vold.switchexternal",
                     mSwitchStoragePref.isChecked() ? "1" : "0");
+            return true;
+        } else if (preference == mEnableCrond) {
+            SystemProperties.set(ENABLE_CROND_PROP,
+                    mEnableCrond.isChecked() ? "1" : "0");
             return true;
         }
         return false;
@@ -163,9 +170,6 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
                         Settings.Secure.ENABLE_PERMISSIONS_MANAGEMENT, 0);
                 mEnableManagement.setChecked(false);
             }
-        } else if (preference == mEnableCrond) {
-            SystemProperties.set(ENABLE_CROND_PROP,
-                    mEnableCrond.isChecked() ? "1" : "0");
         }
         return false;
     }
