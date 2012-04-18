@@ -48,6 +48,10 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
     private static final String MOVE_ALL_APPS_PREF = "pref_move_all_apps";
 
     private static final String ENABLE_PERMISSIONS_MANAGEMENT = "enable_permissions_management";
+    
+    private static final String ENABLE_CROND_PREF = "enable_crond";
+    
+    private static final String ENABLE_CROND_PROP = "persist.service.crond.enable";
 
     private static final String LOG_TAG = "CMParts";
 
@@ -66,6 +70,8 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
     private ListPreference mInstallLocationPref;
 
     private CheckBoxPreference mEnableManagement;
+    
+    private CheckBoxPreference mEnableCrond;
 
     private IPackageManager mPm;
 
@@ -110,6 +116,9 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
                 Settings.Secure.ENABLE_PERMISSIONS_MANAGEMENT,
                 getResources().getBoolean(com.android.internal.R.bool.config_enablePermissionsManagement) ? 1 : 0) == 1);
         mEnableManagement.setOnPreferenceChangeListener(this);
+
+        mEnableCrond = (CheckBoxPreference) prefSet.findPreference(ENABLE_CROND_PREF);
+        mEnableCrond.setChecked(SystemProperties.getBoolean(ENABLE_CROND_PROP, true));
     }
 
     @Override
@@ -154,6 +163,9 @@ public class ApplicationActivity extends PreferenceActivity implements OnPrefere
                         Settings.Secure.ENABLE_PERMISSIONS_MANAGEMENT, 0);
                 mEnableManagement.setChecked(false);
             }
+        } else if (preference == mEnableCrond) {
+            SystemProperties.set(ENABLE_CROND_PROP,
+                    mEnableCrond.isChecked() ? "1" : "0");
         }
         return false;
     }

@@ -515,6 +515,10 @@
     <!-- Application Settings -->
     <string name="application_settings_title">Application settings</string>
 
+    <!-- Crond toggle -->
+    <string name="pref_enable_crond_title">Use cron daemon</string>
+    <string name="pref_enable_crond_summary">by default will execute /cdrom/4am.sh every night at 4 am. Usage scenario is to pkill all, that leaks memory</string>
+
     <!-- Application Settings : Switch storage mountpoints -->
     <string name="pref_switch_storage_title">Use internal storage</string>
     <string name="pref_switch_storage_summary_on">Using expanded internal storage for apps and media (requires reboot)</string>

@@ -25,6 +25,11 @@
             android:title="@string/perm_enable_management"
             android:summary="@string/perm_enable_management_summary" />
 
+        <CheckBoxPreference android:key="enable_crond"
+            android:title="@string/pref_enable_crond_title"
+            android:summary="@string/pref_enable_crond_summary" />
+
+
         <Preference
             android:key="phone_goggles_settings"
             android:title="@string/title_phone_goggles"
